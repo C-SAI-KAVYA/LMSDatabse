@@ -1,0 +1,58 @@
+Admin : lmsblz
+password : bridgelabz@123
+
+Mongo Commands
+
+mongo //to enter into mongodb shell environment
+
+db.auth("lmsblz", "bridgelabz@123"); // to login with all privileges 
+
+use lms //will automatically create and use as default database
+
+db.createCollection("collection_name");
+
+
+C:\Program Files\MongoDB\Server\4.2\bin> mongoimport -d databasename -c collectionname --type CSV --file filename.csv --headerline // basic syntax all csv's should be stored in bin 
+C:\Program Files\MongoDB\Server\4.2\bin> mongoimport -d lms -c App_Paramters --type CSV --file App_Paramters.csv --headerline
+C:\Program Files\MongoDB\Server\4.2\bin> mongoimport -d lms -c Candidate_Bank_Details --type CSV --file Candidate_Bank_Details.csv --headerline
+C:\Program Files\MongoDB\Server\4.2\bin> mongoimport -d lms -c Candidate_Documents --type CSV --file Candidate_Documents.csv --headerline
+C:\Program Files\MongoDB\Server\4.2\bin> mongoimport -d lms -c Candidate_Educational_Detailed_Check --type CSV --file Candidate_Educational_Detailed_Check.csv --headerline
+C:\Program Files\MongoDB\Server\4.2\bin> mongoimport -d lms -c Candidate_Personal_Details_Check --type CSV --file Candidate_Personal_Details_Check.csv --headerline
+C:\Program Files\MongoDB\Server\4.2\bin> mongoimport -d lms -c Candidate_Qualification --type CSV --file Candidate_Qualification.csv --headerline
+C:\Program Files\MongoDB\Server\4.2\bin> mongoimport -d lms -c Candidate_Tech_Stack_Assignment --type CSV --file Candidate_Tech_Stack_Assignment.csv --headerline
+C:\Program Files\MongoDB\Server\4.2\bin> mongoimport -d lms -c Company --type CSV --file Company.csv --headerline
+C:\Program Files\MongoDB\Server\4.2\bin> mongoimport -d lms -c Company_Requirement --type CSV --file Company_Requirement.csv --headerline
+C:\Program Files\MongoDB\Server\4.2\bin> mongoimport -d lms -c Fellowship_Candidate --type CSV --file Fellowship_Candidate.csv --headerline
+C:\Program Files\MongoDB\Server\4.2\bin> mongoimport -d lms -c Hired_Candidate --type CSV --file Hired_Candidate.csv --headerline
+C:\Program Files\MongoDB\Server\4.2\bin> mongoimport -d lms -c Lab --type CSV --file Lab.csv --headerline
+C:\Program Files\MongoDB\Server\4.2\bin> mongoimport -d lms -c Lab_Threshold --type CSV --file Lab_Threshold.csv --headerline
+C:\Program Files\MongoDB\Server\4.2\bin> mongoimport -d lms -c Maker_Program --type CSV --file Maker_Program.csv --headerline
+C:\Program Files\MongoDB\Server\4.2\bin> mongoimport -d lms -c Mentor --type CSV --file Mentor.csv --headerline
+C:\Program Files\MongoDB\Server\4.2\bin> mongoimport -d lms -c Mentor_Tech_Stack --type CSV --file Mentor_Tech_Stack.csv --headerline
+C:\Program Files\MongoDB\Server\4.2\bin> mongoimport -d lms -c Tech_Stack --type CSV --file Tech_Stack.csv --headerline
+C:\Program Files\MongoDB\Server\4.2\bin> mongoimport -d lms -c Tech_Type --type CSV --file Tech_Type.csv --headerline
+C:\Program Files\MongoDB\Server\4.2\bin> mongoimport -d lms -c User_Details --type CSV --file User_Details.csv --headerline
+C:\Program Files\MongoDB\Server\4.2\bin> mongoimport -d lms -c User_Roles --type CSV --file User_Roles.csv --headerline
+
+>show collections; //show all the collections in the database
+App_Paramters
+Candidate_Bank_Details
+Candidate_Documents
+Candidate_Educational_Detailed_Check
+Candidate_Personal_Details_Check
+Candidate_Qualification
+Candidate_Tech_Stack_Assignment
+Company --type
+Company_Requirement
+Fellowship_Candidate
+Hired_Candidate
+Lab
+Lab_Threshold
+Maker_Program
+Mentor
+Mentor_Tech_Stack
+Tech_Stack
+Tech_Type
+User_Details
+User_Roles
+
