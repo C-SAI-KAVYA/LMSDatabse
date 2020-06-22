@@ -1,0 +1,1005 @@
+//Hired Candidate table
+CREATE TABLE Hired_Candidate(Id BIGINT NOT NULL AUTO_INCREMENT,
+first_name VARCHAR(255) NOT NULL,
+middle_name VARCHAR(255) NOT NULL,
+last_name VARCHAR(255) NOT NULL,
+email_id VARCHAR(255) NOT NULL,
+hired_city VARCHAR(255) NOT NULL,
+degree VARCHAR(100) NOT NULL,
+hired_date DATETIME NOT NULL,
+mobile_number VARCHAR(255) NOT NULL,
+permanent_pincode INT NOT NULL,
+hired_lab VARCHAR(255) NOT NULL,
+attitude VARCHAR(255) NOT NULL,
+communication_remark VARCHAR(255) NOT NULL,
+knowledge_remark VARCHAR(255) NOT NULL,
+aggregate_percentage DOUBLE NOT NULL,
+status VARCHAR(255) NOT NULL,
+creator_stamp DATETIME NOT NULL,
+creator_user VARCHAR(255) NOT NULL,
+PRIMARY KEY(Id));//done
+
+//Insert Query Stored Procedure
+create procedure insert_Hired_Candidate(IN fn VARCHAR(255),IN mn VARCHAR(255),IN ln VARCHAR(255),IN email VARCHAR(255),IN hiredCity VARCHAR(255),IN deg VARCHAR(255),IN hiredDate DATETIME,IN mobNo LONG,IN permanent_pincode LONG,IN hired_lab VARCHAR(255),IN attitude VARCHAR(255), IN commn_remark VARCHAR(255),IN know_remark VARCHAR(255),IN agg_perc DOUBLE ,IN status VARCHAR(255),IN creator_stamp DATETIME,IN creator_user VARCHAR(255))
+     begin
+     INSERT INTO 
+	Hired_Candidate(first_name,middle_name,last_name,email_id,hired_city,degree,hired_date,mobile_number,permanent_pincode,hired_lab,attitude,communication_remark,knowledge_remark,aggregate_percentage,status,creator_stamp,creator_user)
+	VALUES(fn,mn,ln,email,hiredCity,deg,hiredDate,mobNo,permanent_pincode,hired_lab,attitude,commn_remark,know_remark,agg_perc,status,creator_stamp,creator_user);
+     end;
+     /
+
+//Update Query Stored Procedure
+create procedure update_Hired_Candidate(IN id1 BIGINT,IN firstName VARCHAR(255),IN middleName VARCHAR(255),IN lastName VARCHAR(255),IN email VARCHAR(255),IN hiredCity VARCHAR(255),IN deg VARCHAR(255),IN hiredDate DATETIME,IN mobileNo LONG,IN permanentPincode LONG,IN hiredLab VARCHAR(255),IN atti VARCHAR(255), IN communicationRemark VARCHAR(255),IN knowledgeRemark VARCHAR(255),IN aggregatePercentage DOUBLE ,IN stat VARCHAR(255),IN creatorStamp DATETIME,IN creatorUser VARCHAR(255))
+     begin
+     UPDATE Hired_Candidate SET first_name = firstName, middle_name = middleName,last_name = lastName, email_id = email, hired_city = hiredCity, degree = deg, hired_date = hiredDate, mobile_number = mobileNo, permanent_pincode = permanentPincode, hired_lab = hiredLab, attitude = atti, communication_remark = communicationRemark, knowledge_remark = knowledgeRemark, aggregate_percentage = aggregatePercentage, status = stat, creator_stamp = creatorStamp, creator_user = creatorUser WHERE Id=id1;
+     end;
+     /
+
+//Delete On ID procedure query
+create procedure delete_Hired_Candidate_On_ID(IN id BIGINT)
+     begin
+     DELETE FROM Hired_Candidate WHERE Id=id;
+     end;
+     /
+
+//Select All on ID procedure query
+create procedure select_Hired_Candidate_On_ID(IN id BIGINT)
+     begin
+     SELECT * FROM Hired_Candidate WHERE Id=id;
+     end;
+     /
+
+//Select all stored procedure query
+create procedure select_Hired_Candidate()
+     begin
+     SELECT * FROM Hired_Candidate;
+     end;
+     /  
+
+//fellowship candidate
+CREATE TABLE Fellowship_Candidate(Id BIGINT NOT NULL AUTO_INCREMENT,
+first_name VARCHAR(255) NOT NULL,
+middle_name VARCHAR(255) NOT NULL,
+last_name VARCHAR(255) NOT NULL,
+email_id VARCHAR(255) NOT NULL,
+hired_city VARCHAR(255) NOT NULL,
+degree VARCHAR(255) NOT NULL,
+hired_date DATETIME NOT NULL,
+mobile_number VARCHAR(255) NOT NULL,
+permanent_pincode INT NOT NULL,
+hired_lab VARCHAR(255) NOT NULL,
+attitude VARCHAR(255) NOT NULL,
+communication_remark VARCHAR(255) NOT NULL,
+knowledge_remark VARCHAR(255) NOT NULL,
+aggregate_remark DOUBLE NOT NULL,
+status VARCHAR(255) NOT NULL,
+creator_stamp DATETIME NOT NULL,
+creator_user VARCHAR(255) NOT NULL,
+birth_date DATETIME NOT NULL,
+is_birth_date_verified VARCHAR(255) NOT NULL,
+parent_name VARCHAR(255) NOT NULL,
+parent_occupation VARCHAR(255) NOT NULL,
+parents_mobile_number LONG NOT NULL,
+parents_annual_salary DOUBLE NOT NULL,
+local_address VARCHAR(255) NOT NULL,
+permanent_address VARCHAR(255) NOT NULL,
+photo_path VARCHAR(255) NOT NULL,
+joining_date VARCHAR(255) NOT NULL,
+candidate_status VARCHAR(255) NOT NULL,
+personal_information VARCHAR(255) NOT NULL,
+bank_information VARCHAR(255) NOT NULL,
+educational_information VARCHAR(255) NOT NULL,
+document_status VARCHAR(255) NOT NULL,
+remark VARCHAR(255) NOT NULL,
+PRIMARY KEY(Id));//done
+
+//Insert Query Stored Procedure
+create procedure insert_Fellowship_Candidate(IN firstName VARCHAR(255), IN middleName VARCHAR(255), IN lastName VARCHAR(255), IN email VARCHAR(255), IN hiredCity VARCHAR(255), IN deg VARCHAR(255), IN hiredDate DATETIME, IN mobileNumber LONG, IN permanentPincode INT, IN hiredLab VARCHAR(255), IN attit VARCHAR(255), IN communicationRemark VARCHAR(255), IN knowledgeRemark VARCHAR(255), IN aggregateRemark VARCHAR(255), IN stat VARCHAR(255), IN creatorStamp DATETIME, IN creatorUser VARCHAR(255), IN birthDate DATETIME, IN isBirthDateVerified VARCHAR(255), IN parentName VARCHAR(255), IN parentOccupation VARCHAR(255), IN parentsMobileNumber LONG, IN parentsAnnualSalary DOUBLE, IN localAddress VARCHAR(255), IN permanentAddress VARCHAR(255), IN photoPath VARCHAR(255), IN joiningDate DATETIME, IN candidateStatus VARCHAR(255), IN personalInformation VARCHAR(255), IN bankInformation VARCHAR(255), IN educationalInformation VARCHAR(255), IN documentStatus VARCHAR(255), IN remrk VARCHAR(255))
+     begin
+     INSERT INTO 
+	Fellowsip_Candidate(first_name, middle_name, last_name, email_id, hired_city, degree, hired_date, mobile_number, permanent_pincode, hired_lab, attitude, communication_remark, knowledge_remark, aggregate_remark, status, creator_stamp, creator_user, birth_date, is_birth_date_verified, parent_name, parent_occupation, parents_mobile_number, parents_annual_salary, local_address, permanent_address, photo_path, joining_date, candidate_status, personal_information, bank_information, educational_information, document_status, remark)
+	VALUES(firstName, middleName, lastName, email, hiredCity, deg, hiredDate, mobileNumber, permanentPincode, hiredLab, attit, communicationRemark, knowledgeRemark, aggregateRemark, stat, creatorStamp, creatorUser, birthDate, isBirthDateVerified, parentName, parentOccupation, parentsMobileNumber, parentsAnnualSalary, localAddress, permanentAddress, photoPath, joiningDate, candidateStatus, personalInformation, bankInformation, educationalInformation, documentStatus, remrk);
+     end;
+     /
+
+//Update Query Stored Procedure
+create procedure update_Fellowship_Candidate(IN id1 BIGINT,IN firstName VARCHAR(255), IN middleName VARCHAR(255), IN lastName VARCHAR(255), IN email VARCHAR(255), IN hiredCity VARCHAR(255), IN deg VARCHAR(255), IN hiredDate DATETIME, IN mobileNumber LONG, IN permanentPincode INT, IN hiredLab VARCHAR(255), IN attit VARCHAR(255), IN communicationRemark VARCHAR(255), IN knowledgeRemark VARCHAR(255), IN aggregateRemark VARCHAR(255), IN stat VARCHAR(255), IN creatorStamp DATETIME, IN creatorUser VARCHAR(255), IN birthDate DATETIME, IN isBirthDateVerified VARCHAR(255), IN parentName VARCHAR(255), IN parentOccupation VARCHAR(255), IN parentsMobileNumber LONG, IN parentsAnnualSalary DOUBLE, IN localAddress VARCHAR(255), IN permanentAddress VARCHAR(255), IN photoPath VARCHAR(255), IN joiningDate DATETIME, IN candidateStatus VARCHAR(255), IN personalInformation VARCHAR(255), IN bankInformation VARCHAR(255), IN educationalInformation VARCHAR(255), IN documentStatus VARCHAR(255), IN remrk VARCHAR(255))
+     begin
+     UPDATE 
+	Fellowship_Candidate SET first_name = firstName, middle_name = middleName, last_name = lastName, email_id = email, hired_city = hiredCity, degree = deg, hired_date = hiredDate, mobile_number = mobileNumber, permanent_pincode = permanentPincode, hired_lab = hiredLab, attitude = attit, communication_remark = communicationRemark, knowledge_remark = knowledgeRemark, aggregate_remark = aggregateRemark, status = stat, creator_stamp = creatorStamp, creator_user = creatorUser, birth_date = birthDate, is_birth_date_verified = isBirthDateVerified, parent_name = parentName, parent_occupation = parentOccupation, parents_mobile_number = parentsMobileNumber, parents_annual_salary = parentsAnnualSalary, local_address = localAddress, permanent_address = permanentAddress, photo_path = photoPath, joining_date = joiningDate, candidate_status = candidateStatus, personal_information = personalInformation, bank_information = bankInformation, educational_information = educationalInformation, document_status = documentStatus, remark 	= remrk WHERE Id=id1;
+     end;
+     /
+
+//Delete On ID procedure query
+create procedure delete_Fellowship_Candidate_On_ID(IN id BIGINT)
+     begin
+     DELETE FROM Fellowship_Candidate WHERE Id=id;
+     end;
+     /
+
+//Select All on ID procedure query
+create procedure select_Fellowship_Candidate_On_ID(IN id BIGINT)
+     begin
+     SELECT * FROM Fellowship_Candidate WHERE Id=id;
+     end;
+     /
+
+//Select all stored procedure query
+create procedure select_Fellowship_Candidate()
+     begin
+     SELECT * FROM Fellowship_Candidate;
+     end;
+     /  
+
+//Candidate personal details check
+CREATE TABLE Candidate_Personal_Details_Check(Id BIGINT NOT NULL AUTO_INCREMENT,
+candidate_id BIGINT NOT NULL,
+field_name VARCHAR(255) NOT NULL,
+is_verified VARCHAR(255) NOT NULL,
+last_updated_stamp VARCHAR(255) NOT NULL,
+last_updated_user VARCHAR(255) NOT NULL,
+creator_stamp DATETIME NOT NULL,
+creator_user VARCHAR(255) NOT NULL,
+PRIMARY KEY(Id, candidate_id));//done //noted that in the complete table there can be only one column can have auto increment function
+
+//Insert Query Stored Procedure
+create procedure insert_Candidate_Personal_Details_Check(IN candidateId BIGINT, IN fieldName VARCHAR(255), IN isVerified VARCHAR(255), IN lastUpdatedStamp DATETIME, IN lastUpdatedUser VARCHAR(255), IN creatorStamp DATETIME, IN creatorUser VARCHAR(255))
+     begin
+     INSERT INTO 
+	Candidate_Personal_Details_Check(candidate_id, field_name, is_verified, last_updated_stamp, last_updated_user, creator_stamp, creator_user)
+	VALUES(candidateId, fieldName, isVerified, lastUpdatedStamp, lastUpdatedUser, creatorStamp, creatorUser);
+     end;
+     /
+
+//Update Query Stored Procedure
+create procedure update_Candidate_Personal_Details_Check(IN id1 BIGINT,IN candidateId BIGINT, IN fieldName VARCHAR(255), IN isVerified VARCHAR(255), IN lastUpdatedStamp DATETIME, IN lastUpdatedUser VARCHAR(255), IN creatorStamp DATETIME, IN creatorUser VARCHAR(255))
+     begin
+     UPDATE Candidate_Personal_Details_Check SET candidate_id = candidateId, field_name = fieldName, is_verified = isVerified, last_updated_stamp = lastUpdatedStamp, last_updated_user = lastUpdatedUser, creator_stamp = creatorStamp, creator_user = creatorUser WHERE Id=id1;
+     end;
+     /
+
+//Delete On ID procedure query
+create procedure delete_Candidate_Personal_Details_Check_On_Id(IN id BIGINT)
+     begin
+     DELETE FROM Candidate_Personal_Details_Check WHERE Id=id;
+     end;
+     /
+
+//Select All on ID procedure query
+create procedure select_Candidate_Personal_Details_Check_On_Id(IN id BIGINT)
+     begin
+     SELECT * FROM Candidate_Personal_Details_Check WHERE Id=id;
+     end;
+     /
+
+//Select all stored procedure query
+create procedure select_Candidate_Personal_Details_Check()
+     begin
+     SELECT * FROM Candidate_Personal_Details_Check;
+     end;
+     /
+//Candidate Bank Details
+CREATE TABLE Candidate_Bank_Details(Id BIGINT NOT NULL AUTO_INCREMENT,
+candidate_id BIGINT NOT NULL,
+name VARCHAR(255) NOT NULL,
+account_number BIGINT NOT NULL,
+is_account_num_verified VARCHAR(255) NOT NULL,
+ifsc_code BIGINT NOT NULL,
+is_ifsc_code_verified VARCHAR(255) NOT NULL,
+pan_number BIGINT NOT NULL,
+is_pan_number_verified VARCHAR(255) NOT NULL,
+addhaar_num BIGINT NOT NULL,
+is_addhar_num_verified VARCHAR(255) NOT NULL,
+creator_stamp DATETIME NOT NULL,
+creator_user VARCHAR(255) NOT NULL,
+PRIMARY KEY(Id, candidate_id));//done
+
+//Insert Query Stored Procedure
+create procedure insert_Candidate_Bank_Details(IN candidateId BIGINT, IN Name VARCHAR(255), IN accountNumber LONG, IN isAccountNumVerified VARCHAR(255), IN ifscCode LONG, IN isIfscCodeVerified VARCHAR(255), IN panNumber LONG, IN isPanNumberVerified VARCHAR(255), IN addhaarNum VARCHAR(255), IN isAddharNumVerified VARCHAR(255), IN creatorStamp DATETIME, IN creatorUser VARCHAR(255))
+     begin
+     INSERT INTO 
+	Candidate_Bank_Details(candidate_id, name, account_number, is_account_num_verified, ifsc_code, is_ifsc_code_verified, pan_number, is_pan_number_verified, addhaar_num, is_addhar_num_verified, creator_stamp, creator_user)
+	VALUES(candidateId, Name, accountNumber, isAccountNumVerified, ifscCode, isIfscCodeVerified, panNumber, isPanNumberVerified, addhaarNum, isAddharNumVerified, creatorStamp, creatorUser);
+     end;
+     /
+
+//Update Query Stored Procedure
+create procedure update_Candidate_Bank_Details(IN id1 BIGINT,IN candidateId BIGINT, IN Name VARCHAR(255), IN accountNumber LONG, IN isAccountNumVerified VARCHAR(255), IN ifscCode LONG, IN isIfscCodeVerified VARCHAR(255), IN panNumber LONG, IN isPanNumberVerified VARCHAR(255), IN addhaarNum VARCHAR(255), IN isAddharNumVerified VARCHAR(255), IN creatorStamp DATETIME, IN creatorUser VARCHAR(255))
+     begin
+     UPDATE Candidate_Bank_Details SET candidate_id = candidateId, name = Name, account_number = accountNumber, is_account_num_verified =isAccountNumVerified, ifsc_code = ifscCode, is_ifsc_code_verified = isIfscCodeVerified, pan_number = panNumber, is_pan_number_verified = isPanNumberVerified, addhaar_num = addhaarNum, is_addhar_num_verified = isAddharNumVerified, creator_stamp = creatorStamp, creator_user = creatorUser WHERE Id=id1;
+     end;
+     /
+
+//Delete On ID procedure query
+create procedure delete_Candidate_Bank_Details_On_ID(IN id BIGINT)
+     begin
+     DELETE FROM Candidate_Bank_Details WHERE Id=id;
+     end;
+     /
+
+//Select All on ID procedure query
+create procedure select_Candidate_Bank_Details_On_ID(IN id BIGINT)
+     begin
+     SELECT * FROM Candidate_Bank_Details WHERE Id=id;
+     end;
+     /
+
+//Select all stored procedure query
+create procedure select_Candidate_Bank_Details()
+     begin
+     SELECT * FROM Candidate_Bank_Details;
+     end;
+     /
+
+//Candidate Qualification
+CREATE TABLE Candidate_Qualification(Id BIGINT NOT NULL AUTO_INCREMENT,
+candidate_id BIGINT NOT NULL,
+diploma VARCHAR(255) NOT NULL,
+degree_name VARCHAR(255) NOT NULL,
+is_degree_name_verified VARCHAR(255) NOT NULL,
+employee_discipline VARCHAR(255) NOT NULL,
+is_employee_discipline_verified VARCHAR(255) NOT NULL,
+passing_year INT NOT NULL,
+is_passing_year_verified VARCHAR(255) NOT NULL,
+final_year_percentage DOUBLE NOT NULL,
+is_final_year_percentage_verified VARCHAR(255) NOT NULL,
+training_institute VARCHAR(255) NOT NULL,
+is_training_institute_verified VARCHAR(255) NOT NULL,
+training_duration_month DATETIME NOT NULL,
+is_training_duration_month_verified VARCHAR(255) NOT NULL,
+other_training VARCHAR(255) NOT NULL,
+is_other_training_verified VARCHAR(255) NOT NULL,
+creator_stamp DATETIME NOT NULL,
+creator_user VARCHAR(255) NOT NULL,
+PRIMARY KEY(Id, candidate_id));//done
+
+//Insert Query Stored Procedure
+create procedure insert_Candidate_Qualification(IN candidateId BIGINT, IN dipl VARCHAR(255), IN degreeName VARCHAR(255), IN isDegreeNameVerified VARCHAR(255), IN employeeDiscipline VARCHAR(255), IN isEmployeeDisciplineVerified VARCHAR(255), IN passingYear INT, IN isPassingYearVerified VARCHAR(255), IN finalYearPercentage DOUBLE, IN isFinalYearPercentageVerified VARCHAR(255), IN trainingInstitute VARCHAR(255), IN isTrainingInstituteVerified VARCHAR(255), IN trainingDurationMonth DATETIME, IN isTrainingDurationMonthVerified VARCHAR(255), IN otherTraining VARCHAR(255), IN isOtherTrainingVerified VARCHAR(255), IN creatorStamp DATETIME, IN creatorUser VARCHAR(255))
+     begin
+     INSERT INTO 
+	Candidate_Qualification(candidate_id, diploma, degree_name, is_degree_name_verified, employee_discipline, is_employee_discipline_verified, passing_year, is_passing_year_verified, final_year_percentage, is_final_year_percentage_verified, training_institute, is_training_institute_verified, training_duration_month, is_training_duration_month_verified, other_training, is_other_training_verified, creator_stamp, creator_user)
+	VALUES(candidateId, dipl, degreeName, isDegreeNameVerified, employeeDiscipline, isEmployeeDisciplineVerified, passingYear, isPassingYearVerified, finalYearPercentage, isFinalYearPercentageVerified, trainingInstitute, isTrainingInstituteVerified, trainingDurationMonth, isTrainingDurationMonthVerified, otherTraining, isOtherTrainingVerified, creatorStamp, creatorUser);
+     end;
+     /
+
+//Update Query Stored Procedure
+create procedure update_Candidate_Qualification(IN id1 BIGINT,IN candidateId BIGINT, IN dipl VARCHAR(255), IN degreeName VARCHAR(255), IN isDegreeNameVerified VARCHAR(255), IN employeeDiscipline VARCHAR(255), IN isEmployeeDisciplineVerified VARCHAR(255), IN passingYear INT, IN isPassingYearVerified VARCHAR(255), IN finalYearPercentage DOUBLE, IN isFinalYearPercentageVerified VARCHAR(255), IN trainingInstitute VARCHAR(255), IN isTrainingInstituteVerified VARCHAR(255), IN trainingDurationMonth DATETIME, IN isTrainingDurationMonthVerified VARCHAR(255), IN otherTraining VARCHAR(255), IN isOtherTrainingVerified VARCHAR(255), IN creatorStamp DATETIME, IN creatorUser VARCHAR(255))
+     begin
+     UPDATE Candidate_Qualification SET candidate_id = candidateId, diploma = dipl, degree_name = degreeName, is_degree_name_verified = isDegreeNameVerified, employee_discipline = employeeDiscipline, is_employee_discipline_verified = isEmployeeDisciplineVerified, passing_year = passingYear, is_passing_year_verified = isPassingYearVerified, final_year_percentage = finalYearPercentage, is_final_year_percentage_verified = isFinalYearPercentageVerified, training_institute = trainingInstitute, is_training_institute_verified = isTrainingInstituteVerified, training_duration_month = trainingDurationMonth, is_training_duration_month_verified = isTrainingDurationMonthVerified, other_training = otherTraining, is_other_training_verified = isOtherTrainingVerified, creator_stamp = creatorStamp, creator_user =  creatorUser WHERE Id=id1;
+     end;
+     /
+
+//Delete On ID procedure query
+create procedure delete_Candidate_Qualification_On_ID(IN id BIGINT)
+     begin
+     DELETE FROM Candidate_Qualification WHERE Id=id;
+     end;
+     /
+
+//Select All on ID procedure query
+create procedure select_Candidate_Qualification_On_ID(IN id BIGINT)
+     begin
+     SELECT * FROM Candidate_Qualification_check WHERE Id=id;
+     end;
+     /
+
+//Select all stored procedure query
+create procedure select_Candidate_Qualification()
+     begin
+     SELECT * FROM Candidate_Qualification;
+     end;
+     /
+
+//Candidate Qualification
+CREATE TABLE Candidate_Educational_Detailed_Check(Id BIGINT NOT NULL AUTO_INCREMENT,
+candidate_id BIGINT NOT NULL,
+field_name VARCHAR(255) NOT NULL,
+is_verified VARCHAR(255) NOT NULL,
+last_updated_stamp VARCHAR(255) NOT NULL,
+last_updated_user VARCHAR(255) NOT NULL,
+creator_stamp DATETIME NOT NULL,
+creator_user VARCHAR(255) NOT NULL,
+PRIMARY KEY(Id, candidate_id));//done
+
+//Insert Query Stored Procedure
+create procedure insert_Candidate_Educational_Detailed_Check(IN candidateId BIGINT, IN fieldName VARCHAR(255), IN isVerified VARCHAR(255), IN lastUpdatedStamp DATETIME, IN lastUpdatedUser VARCHAR(255), IN creatorStamp DATETIME, IN creatorUser VARCHAR(255))
+     begin
+     INSERT INTO 
+	Candidate_Educational_Detailed_Check(candidate_id, field_name, is_verified, last_updated_stamp, last_updated_user, creator_stamp, creator_user)
+	VALUES(candidateId, fieldName, isVerified, lastUpdatedStamp, lastUpdatedUser, creatorStamp, creatorUser);
+     end;
+     /
+
+//Update Query Stored Procedure
+create procedure update_Candidate_Educational_Detailed_Check(IN id1 BIGINT,IN candidateId BIGINT, IN fieldName VARCHAR(255), IN isVerified VARCHAR(255), IN lastUpdatedStamp DATETIME, IN lastUpdatedUser VARCHAR(255), IN creatorStamp DATETIME, IN creatorUser VARCHAR(255))
+     begin
+     UPDATE Candidate_Educational_Detailed_Check SET candidate_id = candidateId, field_name = fieldName, is_verified = isVerified, last_updated_stamp = lastUpdatedStamp, last_updated_user = lastUpdatedUser, creator_stamp = creatorStamp, creator_user = creatorUser WHERE Id=id1;
+     end;
+     /
+
+//Delete On ID procedure query
+create procedure delete_Candidate_Educational_Detailed_Check_On_ID(IN id BIGINT)
+     begin
+     DELETE FROM Candidate_Educational_Detailed_Check WHERE Id=id;
+     end;
+     /
+
+//Select All on ID procedure query
+create procedure select_Candidate_Educational_Detailed_Check_On_ID(IN id BIGINT)
+     begin
+     SELECT * FROM Candidate_Educational_Detailed_Check WHERE Id=id;
+     end;
+     /
+
+//Select all stored procedure query
+create procedure select_Candidate_Educational_Detailed_Check()
+     begin
+     SELECT * FROM Candidate_Educational_Detailed_Check;
+     end;
+     /
+
+//Candidate Documents
+CREATE TABLE Candidate_Documents(Id BIGINT NOT NULL AUTO_INCREMENT,
+candidate_id BIGINT NOT NULL,
+document_type VARCHAR(255) NOT NULL,
+document_path VARCHAR(255) NOT NULL,
+status VARCHAR(255) NOT NULL,
+creator_stamp DATETIME NOT NULL,
+creator_user VARCHAR(255) NOT NULL,
+PRIMARY KEY(Id, candidate_id));//done
+
+//Insert Query Stored Procedure
+create procedure insert_Candidate_Documents(IN candidateId BIGINT, IN documentType VARCHAR(255), IN documentPath VARCHAR(255), IN stat VARCHAR(255), IN creatorStamp DATETIME, IN creatorUser VARCHAR(255))
+     begin
+     INSERT INTO 
+	Candidate_Documents(candidate_id, document_type, document_path, status, creator_stamp, creator_user)
+	VALUES(candidateId, documentType, documentPath, stat, creatorStamp, creatorUser);
+     end;
+     /
+
+//Update Query Stored Procedure
+create procedure update_Candidate_Documents_On_ID(IN id1 BIGINT, IN candidateId BIGINT, IN documentType VARCHAR(255), IN documentPath VARCHAR(255), IN status VARCHAR(255), IN creatorStamp DATETIME, IN creatorUser VARCHAR(255))
+     begin
+     UPDATE Candidate_Documents SET candidate_id = candidateId, document_type = documentType, document_path = documentPath, status = stat, creator_stamp = creatorStamp, creator_user = creatorUser WHERE Id=id1;
+     end;
+     /
+
+//Delete On ID procedure query
+create procedure delete_Candidate_Documents_On_ID(IN id BIGINT)
+     begin
+     DELETE FROM Candidate_Documents WHERE Id=id;
+     end;
+     /
+
+//Select All on ID procedure query
+create procedure select_Candidate_Documents_On_ID(IN id BIGINT)
+     begin
+     SELECT * FROM Candidate_Documents WHERE Id=id;
+     end;
+     /
+
+//Select all stored procedure query
+create procedure select_Candidate_Documents()
+     begin
+     SELECT * FROM Candidate_Documents;
+     end;
+     /
+
+//user details table
+Create table User_Details(Id BigInt NOT NULL AUTO_INCREMENT,
+email varchar(255) NOT NULL,
+first_name varchar(255) NOT NULL,
+last_name varchar(255) NOT NULL,
+password varchar(255) NOT NULL,
+contact_number LONG NOT NULL,
+verified varchar(255) NOT NULL,
+PRIMARY KEY(Id));//done
+
+//Insert Query Stored Procedure
+create procedure insert_User_Details(IN emailId VARCHAR(255), IN firstName VARCHAR(255), IN lastName VARCHAR(255), IN pwd VARCHAR(255), IN contactNumber LONG, IN verifd VARCHAR(255))
+     begin
+     INSERT INTO 
+	User_Details(email, first_name, last_name, password, contact_number, verified)
+	VALUES(emailId, firstName, lastName, pwd, contactNumber, verifd);
+     end;
+     /
+
+//Update Query Stored Procedure
+create procedure update_User_Details(IN id1 BIGINT,IN emailId VARCHAR(255), IN firstName VARCHAR(255), IN lastName VARCHAR(255), IN pwd VARCHAR(255), IN contactNumber LONG, IN verifd VARCHAR(255))
+     begin
+     UPDATE User_Details SET email = emailId, first_name = firstName, last_name = lastName, password = pwd, contact_number = contactNumber, verified = verifd WHERE Id=id1;
+     end;
+     /
+
+//Delete On ID procedure query
+create procedure delete_User_Details_On_ID(IN id BIGINT)
+     begin
+     DELETE FROM User_Details WHERE Id=id;
+     end;
+     /
+
+//Select All on ID procedure query
+create procedure select_User_Details_On_ID(IN id BIGINT)
+     begin
+     SELECT * FROM User_Details WHERE Id=id;
+     end;
+     /
+
+//Select all stored procedure query
+create procedure select_User_Details()
+     begin
+     SELECT * FROM User_Details;
+     end;
+     /
+
+//User Roles
+CREATE TABLE User_Roles(user_id BIGINT NOT NULL AUTO_INCREMENT,
+role_name VARCHAR(255) NOT NULL,
+PRIMARY KEY(user_id));//done
+
+//Insert Query Stored Procedure
+create procedure insert_User_Roles(IN roleName VARCHAR(255))
+     begin
+     INSERT INTO 
+	User_Roles(role_name)
+	VALUES(roleName);
+     end;
+     /
+
+//Update Query Stored Procedure
+create procedure update_User_Roles_On_Id(IN id1 BIGINT, IN roleName VARCHAR(255))
+     begin
+     UPDATE User_Roles SET roleName WHERE Id=id1;
+     end;
+     /
+
+//Delete On ID procedure query
+create procedure delete_User_Roles(IN id BIGINT)
+     begin
+     DELETE FROM User_Roles WHERE Id=id;
+     end;
+     /
+
+//Select All on ID procedure query
+create procedure select_User_Roles_On_ID(IN id BIGINT)
+     begin
+     SELECT * FROM User_Roles WHERE Id=id;
+     end;
+     /
+
+//Select all stored procedure query
+create procedure select_User_Roles()
+     begin
+     SELECT * FROM User_Roles;
+     end;
+     /
+
+//Company
+CREATE TABLE Company(Id BIGINT NOT NULL AUTO_INCREMENT,
+name VARCHAR(255) NOT NULL,
+address VARCHAR(255) NOT NULL,
+location VARCHAR(255) NOT NULL,
+status VARCHAR(255) NOT NULL,
+creator_stamp DATETIME NOT NULL,
+creator_user VARCHAR(255) NOT NULL,
+PRIMARY KEY(Id));//done
+
+//Insert Query Stored Procedure
+create procedure insert_Company(IN userName VARCHAR(255), IN addrs VARCHAR(255), IN locatn VARCHAR(255), IN stat VARCHAR(255), IN creatorStamp DATETIME, IN creatorUser VARCHAR(255))
+     begin
+     INSERT INTO 
+	Company(name, address, location, status, creator_stamp, creator_user)
+	VALUES(userName, addrs, locatn, stat, creatorStamp, creatorUser);
+     end;
+     /
+
+//Update Query Stored Procedure
+create procedure update_Company(IN id1 BIGINT, IN userName VARCHAR(255), IN addrs VARCHAR(255), IN locatn VARCHAR(255), IN stat VARCHAR(255), IN creatorStamp DATETIME, IN creatorUser VARCHAR(255))
+     begin
+     UPDATE Company SET name = userName, address = addrs, location = locatn, status = stat, creator_stamp = creatorStamp, creator_user = creatorUser WHERE Id=id1;
+     end;
+     /
+
+//Delete On ID procedure query
+create procedure delete_Company(IN id BIGINT)
+     begin
+     DELETE FROM Company WHERE Id=id;
+     end;
+     /
+
+//Select All on ID procedure query
+create procedure select_Company_On_Id(IN id BIGINT)
+     begin
+     SELECT * FROM Company WHERE Id=id;
+     end;
+     /
+
+//Select all stored procedure query
+create procedure select_Company()
+     begin
+     SELECT * FROM Company;
+     end;
+     /
+
+//maker program
+CREATE TABLE Maker_Program(Id BIGINT NOT NULL AUTO_INCREMENT,
+program_name VARCHAR(255) NOT NULL,
+program_type VARCHAR(255) NOT NULL,
+program_link VARCHAR(255) NOT NULL,
+tech_stack_id BIGINT NOT NULL,
+tech_type_id BIGINT NOT NULL,
+is_program_approved VARCHAR(255) NOT NULL,
+description_status VARCHAR(255) NOT NULL,
+creator_stamp DATETIME NOT NULL,
+creator_user VARCHAR(255) NOT NULL,
+PRIMARY KEY(Id, tech_stack_id, tech_type_id));//done
+
+//Insert Query Stored Procedure
+create procedure insert_Maker_Program(IN programName VARCHAR(255), IN programType VARCHAR(255), IN programLink VARCHAR(255), IN techStackId BIGINT, IN techTypeId BIGINT, IN isProgramApproved VARCHAR(255), IN descriptionStatus VARCHAR(255), IN creator_stamp DATETIME,IN creator_user VARCHAR(255))
+     begin
+     INSERT INTO 
+	Maker_Program(program_name, program_type, program_link, tech_stack_id, tech_type_id, is_program_approved, description_status, creator_stamp, creator_user)
+	VALUES(programName, programType, programLink, techStackId, techTypeId, isProgramApproved, descriptionStatus,creatorStamp,creatorUser);
+     end;
+     /
+
+//Update Query Stored Procedure
+create procedure update_Maker_Program_On_ID(IN id1 BIGINT,IN programName VARCHAR(255), IN programType VARCHAR(255), IN programLink VARCHAR(255), IN techStackId BIGINT, IN techTypeId BIGINT, IN isProgramApproved VARCHAR(255), IN descriptionStatus VARCHAR(255), IN creator_stamp DATETIME,IN creator_user VARCHAR(255))
+     begin
+     UPDATE Maker_Program SET program_name = programName, program_type = programType, program_link = programLink, tech_stack_id = techStackId, tech_type_id = techTypeId, is_program_approved = isProgramApproved, description_status = descriptionStatus, creator_stamp = creatorStamp, creator_user = creatorUser WHERE Id=id1;
+     end;
+     /
+
+//Delete On ID procedure query
+create procedure delete_Maker_Program_On_ID(IN id BIGINT)
+     begin
+     DELETE FROM Maker_Program WHERE Id=id;
+     end;
+     /
+
+//Select All on ID procedure query
+create procedure select_Maker_Program_On_ID(IN id BIGINT)
+     begin
+     SELECT * FROM Maker_Program WHERE Id=id;
+     end;
+     /
+
+//Select all stored procedure query
+create procedure select_Maker_Program()
+     begin
+     SELECT * FROM Maker_Program;
+     end;
+     /
+
+//App Parameters
+CREATE TABLE App_Parameters(Id BIGINT NOT NULL AUTO_INCREMENT,
+key_type VARCHAR(255) NOT NULL,
+key_value VARCHAR(255) NOT NULL,
+key_text_cur_status VARCHAR(255) NOT NULL,
+lastUpdated_user VARCHAR(255) NOT NULL,
+last_updated_stamp DATETIME NOT NULL,
+creator_stamp DATETIME NOT NULL,
+creator_user VARCHAR(255) NOT NULL,
+sequence_number LONG NOT NULL,
+PRIMARY KEY(Id));//done
+
+//Insert Query Stored Procedure
+create procedure insert_App_Parameters(IN keyType VARCHAR(255), IN keyValue VARCHAR(255), IN keyTextcurStatus VARCHAR(255), IN lastUpdatedUser VARCHAR(255), IN last_updatedStamp DATETIME, IN creatorStamp DATETIME, IN creatorUser VARCHAR(255), IN sequenceNumber LONG)
+     begin
+     INSERT INTO 
+	Candidate_Personal_details_check(key_type, key_value, key_text_cur_status, last_updated_user, last_updated_stamp, creator_stamp, creator_user, sequence_number)
+	VALUES(keyType, keyValue, keyTextcurStatus, lastUpdatedUser, lastUpdatedStamp, creatorStamp, creatorUser, sequenceNumber);
+     end;
+     /
+
+//Update Query Stored Procedure
+create procedure update_App_Parameters_On_ID(IN id1 BIGINT,IN keyType VARCHAR(255), IN keyValue VARCHAR(255), IN keyTextcurStatus VARCHAR(255), IN lastUpdatedUser VARCHAR(255), IN lastUpdatedStamp DATETIME, IN creatorStamp DATETIME, IN creatorUser VARCHAR(255), IN sequenceNumber LONG)
+     begin
+     UPDATE App_Parameters SET key_type = keyType, key_value = keyValue, key_text_cur_status = keyTextcurStatus, last_updated_user = lastUpdatedUser, last_updated_stamp = lastUpdatedStamp, creator_stamp = creatorStamp, creator_user = creatorUser,  = sequenceNumber  WHERE Id=id1;
+     end;
+     /
+
+//Delete On ID procedure query
+create procedure delete_App_Parameters_On_ID(IN id BIGINT)
+     begin
+     DELETE FROM App_Parameters WHERE Id=id;
+     end;
+     /
+
+//Select All on ID procedure query
+create procedure select_App_Parameters_On_ID(IN id BIGINT)
+     begin
+     SELECT * FROM App_Parameters WHERE Id=id;
+     end;
+     /
+
+//Select all stored procedure query
+create procedure select_App_Parameters()
+     begin
+     SELECT * FROM App_Parameters;
+     end;
+     /
+
+//mentor
+CREATE TABLE Mentor(Id BIGINT NOT NULL AUTO_INCREMENT,
+name VARCHAR(255) NOT NULL,
+mentor_type VARCHAR(255) NOT NULL,
+lab_id BIGINT NOT NULL,
+status VARCHAR(255) NOT NULL,
+creator_stamp DATETIME NOT NULL,
+creator_user VARCHAR(255) NOT NULL,
+PRIMARY KEY(Id));//done
+
+//Insert Query Stored Procedure
+create procedure insert_Mentor(IN username VARCHAR(255), IN mentorType VARCHAR(255), IN labId BIGINT, IN stat VARCHAR(255), IN creatorStamp DATETIME, IN creatorUser VARCHAR(255))
+     begin
+     INSERT INTO 
+	Mentor(name, mentor_type, lab_id, status, creator_stamp, creator_user)
+	VALUES(username, mentorType, labId, stat, creatorStamp, creatorUser);
+     end;
+     /
+
+//Update Query Stored Procedure
+create procedure update_Mentor_On_ID(IN id1 BIGINT,IN username VARCHAR(255), IN mentorType VARCHAR(255), IN labId BIGINT, IN stat VARCHAR(255), IN creatorStamp DATETIME, IN creatorUser VARCHAR(255))
+     begin
+     UPDATE Mentor SET name = username, mentor_type = mentorType, lab_id = labId, status = stat, creator_stamp = creatorStamp, creator_user = creatorUser WHERE Id=id1;
+     end;
+     /
+
+//Delete On ID procedure query
+create procedure delete_Mentor_On_ID(IN id BIGINT)
+     begin
+     DELETE FROM Mentor WHERE Id=id;
+     end;
+     /
+
+//Select All on ID procedure query
+create procedure select_Mentor_check_On_ID(IN id BIGINT)
+     begin
+     SELECT * FROM Mentor WHERE Id=id;
+     end;
+     /
+
+//Select all stored procedure query
+create procedure select_Mentor()
+     begin
+     SELECT * FROM Mentor;
+     end;
+     /
+
+//Mentor Ideation Map
+CREATE TABLE Mentor_Tech_Stack(Id BIGINT NOT NULL AUTO_INCREMENT,
+mentor_id BIGINT NOT NULL,
+tech_stack_id BIGINT NOT NULL,
+status VARCHAR(255) NOT NULL,
+creator_stamp DATETIME NOT NULL,
+creator_user VARCHAR(255) NOT NULL,
+PRIMARY KEY(Id, mentor_id, tech_Stack_id));//done
+
+//Insert Query Stored Procedure
+create procedure insert_Mentor_Tech_Stack(IN mentorId BIGINT, IN techStackId BIGINT, IN stat VARCHAR(255), IN creatorStamp DATETIME, IN creatorUser VARCHAR(255))
+     begin
+     INSERT INTO 
+	Mentor_Tech_Stack(mentor_id, tech_stack_id, status, creator_stamp, creator_user)
+	VALUES(mentorId, techStackId, stat, creatorStamp, creatorUser);
+     end;
+     /
+
+//Update Query Stored Procedure
+create procedure update_Mentor_Tech_Stack(IN mentorId BIGINT, IN techStackId BIGINT, IN stat VARCHAR(255), IN creatorStamp DATETIME, IN creatorUser VARCHAR(255))
+     begin
+     UPDATE Mentor_Tech_Stack SET mentor_id = mentorId, tech_stack_id = techStackId, status = stat, creator_stamp = creatorStamp, creator_user = creatorUser WHERE Id=id1;
+     end;
+     /
+
+//Delete On ID procedure query
+create procedure delete_Mentor_Tech_Stack_On_ID(IN id BIGINT)
+     begin
+     DELETE FROM Mentor_Tech_Stack WHERE Id=id;
+     end;
+     /
+
+//Select All on ID procedure query
+create procedure select_Mentor_Tech_Stack_On_ID(IN id BIGINT)
+     begin
+     SELECT * FROM Mentor_Tech_Stack WHERE Id=id;
+     end;
+     /
+
+//Select all stored procedure query
+create procedure select_Mentor_Tech_Stack()
+     begin
+     SELECT * FROM Mentor_Tech_Stack;
+     end;
+     /
+
+//Tech Stack
+CREATE TABLE Tech_Stack(Id BIGINT NOT NULL AUTO_INCREMENT,
+tech_name VARCHAR(255) NOT NULL,
+image_path VARCHAR(255) NOT NULL,
+frameworkcurrent_status VARCHAR(255) NOT NULL,
+creator_stamp DATETIME NOT NULL,
+creator_user VARCHAR(255) NOT NULL,
+PRIMARY KEY(Id));//done
+
+//Insert Query Stored Procedure
+create procedure insert_Tech_Stack(IN techName VARCHAR(255), IN imagePath VARCHAR(255), IN frameworkcurrentStatus VARCHAR(255), IN creatorStamp DATETIME, IN creatorUser VARCHAR(255))
+     begin
+     INSERT INTO 
+	Candidate_Personal_details_check(tech_name, image_path, frameworkcurrent_status, creator_stamp, creator_user)
+	VALUES(techName, imagePath, frameworkcurrentStatus, creatorStamp, creatorUser);
+     end;
+     /
+
+//Update Query Stored Procedure
+create procedure update_Tech_Stack_On_ID(IN id1 BIGINT,IN techName VARCHAR(255), IN imagePath VARCHAR(255), IN frameworkcurrentStatus VARCHAR(255), IN creatorStamp DATETIME, IN creatorUser VARCHAR(255))
+     begin
+     UPDATE Tech_Stack SET tech_name = techName, image_path = imagePath, frameworkcurrent_status = frameworkcurrentStatus, creator_stamp = creatorStamp, creator_user = creatorUser WHERE Id=id1;
+     end;
+     /
+
+//Delete On ID procedure query
+create procedure delete_Tech_Stack_On_ID(IN id BIGINT)
+     begin
+     DELETE FROM Candidate_Personal_details_check WHERE Id=id;
+     end;
+     /
+
+//Select All on ID procedure query
+create procedure select_Tech_Stack_On_ID(IN id BIGINT)
+     begin
+     SELECT * FROM Tech_Stack WHERE Id=id;
+     end;
+     /
+
+//Select all stored procedure query
+create procedure select_Tech_Stack()
+     begin
+     SELECT * FROM Tech_Stack;
+     end;
+     /
+
+//Tech type
+CREATE TABLE Tech_Type(Id BIGINT NOT NULL AUTO_INCREMENT,
+type_name VARCHAR(255) NOT NULL,
+current_status VARCHAR(255) NOT NULL,
+creator_stamp DATETIME NOT NULL,
+creator_user VARCHAR(255) NOT NULL,
+PRIMARY KEY(Id));//done
+
+//Insert Query Stored Procedure
+create procedure insert_Tech_Type(IN typeName VARCHAR(255), IN currentStatus VARCHAR(255), IN creator_stamp DATETIME,IN creator_user VARCHAR(255))
+     begin
+     INSERT INTO 
+	Tech_Type(type_name, current_status, creator_stamp, creator_user)
+	VALUES(typeName, currentStatus, creatorStamp, creatorUser);
+     end;
+     /
+
+//Update Query Stored Procedure
+create procedure update_Tech_Type(IN id1 BIGINT,IN typeName VARCHAR(255), IN currentStatus VARCHAR(255), IN creator_stamp DATETIME,IN creator_user VARCHAR(255), IN creatorStamp DATETIME,IN creatorUser VARCHAR(255))
+     begin
+     UPDATE Tech_Type SET type_name = typeName, current_status = currentStatus, creator_stamp = creatorStamp, creator_user = creatorUser WHERE Id=id1;
+     end;
+     /
+
+//Delete On ID procedure query
+create procedure delete_Tech_Type_On_ID(IN id BIGINT)
+     begin
+     DELETE FROM Tech_Type WHERE Id=id;
+     end;
+     /
+
+//Select All on ID procedure query
+create procedure select_Tech_Type_On_ID(IN id BIGINT)
+     begin
+     SELECT * FROM Tech_Type WHERE Id=id;
+     end;
+     /
+
+//Select all stored procedure query
+create procedure select_Tech_Type()
+     begin
+     SELECT * FROM Tech_Type;
+     end;
+     /
+
+//lab
+CREATE TABLE Lab(Id BIGINT NOT NULL AUTO_INCREMENT,
+name VARCHAR(255) NOT NULL,
+location VARCHAR(255) NOT NULL,
+address VARCHAR(255) NOT NULL,
+status VARCHAR(255) NOT NULL,
+creator_stamp DATETIME NOT NULL,
+creator_user VARCHAR(255) NOT NULL,
+PRIMARY KEY(Id));//done
+
+//Insert Query Stored Procedure
+create procedure insert_Lab(IN fn VARCHAR(255),IN mn VARCHAR(255),IN ln VARCHAR(255),IN email VARCHAR(255),IN hiredCity VARCHAR(255),IN deg VARCHAR(255),IN hiredDate DATETIME,IN mobNo LONG,IN permanent_pincode LONG,IN hired_lab VARCHAR(255),IN attitude VARCHAR(255), IN commn_remark VARCHAR(255),IN know_remark VARCHAR(255),IN agg_perc DOUBLE ,IN status VARCHAR(255),IN creator_stamp DATETIME,IN creator_user VARCHAR(255))
+     begin
+     INSERT INTO 
+	Lab(name, location, address, status, creator_stamp, creator_user)
+	VALUES(fn,mn,ln,email,hiredCity,deg,hiredDate,mobNo,permanent_pincode,hired_lab,attitude,commn_remark,know_remark,agg_perc,status,creator_stamp,creator_user);
+     end;
+     /
+
+//Update Query Stored Procedure
+create procedure update_Lab(IN id1 BIGINT,IN firstName VARCHAR(255),IN middleName VARCHAR(255),IN lastName VARCHAR(255),IN email VARCHAR(255),IN hiredCity VARCHAR(255),IN deg VARCHAR(255),IN hiredDate DATETIME,IN mobileNo LONG,IN permanentPincode LONG,IN hiredLab VARCHAR(255),IN atti VARCHAR(255), IN communicationRemark VARCHAR(255),IN knowledgeRemark VARCHAR(255),IN aggregatePercentage DOUBLE ,IN stat VARCHAR(255),IN creatorStamp DATETIME,IN creatorUser VARCHAR(255))
+     begin
+     UPDATE Lab SET first_name = firstName, middle_name = middleName,last_name = lastName, email_id = email, hired_city = hiredCity, degree = deg, hired_date = hiredDate, mobile_number = mobileNo, permanent_pincode = permanentPincode, hired_lab = hiredLab, attitude = atti, communication_remark = communicationRemark, knowledge_remark = knowledgeRemark, aggregate_percentage = aggregatePercentage, status = stat, creator_stamp = creatorStamp, creator_user = creatorUser WHERE Id=id1;
+     end;
+     /
+
+//Delete On ID procedure query
+create procedure delete_Lab_On_ID(IN id BIGINT)
+     begin
+     DELETE FROM Lab WHERE Id=id;
+     end;
+     /
+
+//Select All on ID procedure query
+create procedure select_Lab_On_ID(IN id BIGINT)
+     begin
+     SELECT * FROM Lab WHERE Id=id;
+     end;
+     /
+
+//Select all stored procedure query
+create procedure select_Lab()
+     begin
+     SELECT * FROM Lab;
+     end;
+     /
+
+//lab threshold
+CREATE TABLE Lab_Threshold(Id BIGINT NOT NULL AUTO_INCREMENT,
+lab_id BIGINT NOT NULL,
+lab_capacity INT NOT NULL,
+lead_thresholdideation_engg_threshold BIGINT NOT NULL,
+buddy_engg_threshold BIGINT NOT NULL,
+status VARCHAR(255) NOT NULL,
+creator_stamp DATETIME NOT NULL,
+creator_user VARCHAR(255) NOT NULL,
+PRIMARY KEY(Id, lab_Id));//done
+
+//Insert Query Stored Procedure
+create procedure insert_Lab_Threshold(IN fn VARCHAR(255),IN mn VARCHAR(255),IN ln VARCHAR(255),IN email VARCHAR(255),IN hiredCity VARCHAR(255),IN deg VARCHAR(255),IN hiredDate DATETIME,IN mobNo LONG,IN permanent_pincode LONG,IN hired_lab VARCHAR(255),IN attitude VARCHAR(255), IN commn_remark VARCHAR(255),IN know_remark VARCHAR(255),IN agg_perc DOUBLE ,IN status VARCHAR(255),IN creator_stamp DATETIME,IN creator_user VARCHAR(255))
+     begin
+     INSERT INTO 
+	Lab_Threshold(lab_id, lab_capacity, lead_thresholdideation_engg_threshold, buddy_engg_threshold, status, creator_stamp, creator_user)
+	VALUES(fn,mn,ln,email,hiredCity,deg,hiredDate,mobNo,permanent_pincode,hired_lab,attitude,commn_remark,know_remark,agg_perc,status,creator_stamp,creator_user);
+     end;
+     /
+
+//Update Query Stored Procedure
+create procedure update_Lab_Threshold(IN id1 BIGINT,IN firstName VARCHAR(255),IN middleName VARCHAR(255),IN lastName VARCHAR(255),IN email VARCHAR(255),IN hiredCity VARCHAR(255),IN deg VARCHAR(255),IN hiredDate DATETIME,IN mobileNo LONG,IN permanentPincode LONG,IN hiredLab VARCHAR(255),IN atti VARCHAR(255), IN communicationRemark VARCHAR(255),IN knowledgeRemark VARCHAR(255),IN aggregatePercentage DOUBLE ,IN stat VARCHAR(255),IN creatorStamp DATETIME,IN creatorUser VARCHAR(255))
+     begin
+     UPDATE Lab_Threshold SET first_name = firstName, middle_name = middleName,last_name = lastName, email_id = email, hired_city = hiredCity, degree = deg, hired_date = hiredDate, mobile_number = mobileNo, permanent_pincode = permanentPincode, hired_lab = hiredLab, attitude = atti, communication_remark = communicationRemark, knowledge_remark = knowledgeRemark, aggregate_percentage = aggregatePercentage, status = stat, creator_stamp = creatorStamp, creator_user = creatorUser WHERE Id=id1;
+     end;
+     /
+
+//Delete On ID procedure query
+create procedure delete_Lab_Threshold_On_ID(IN id BIGINT)
+     begin
+     DELETE FROM Lab_Threshold WHERE Id=id;
+     end;
+     /
+
+//Select All on ID procedure query
+create procedure select_Lab_Threshold_On_ID(IN id BIGINT)
+     begin
+     SELECT * FROM Lab_Threshold WHERE Id=id;
+     end;
+     /
+
+//Select all stored procedure query
+create procedure select_Lab_Threshold()
+     begin
+     SELECT * FROM Lab_Threshold;
+     end;
+     /
+
+//Company Requirement
+CREATE TABLE Company_Requirement(Id BIGINT NOT NULL AUTO_INCREMENT,
+company_id BIGINT NOT NULL,
+requested_month VARCHAR(255) NOT NULL,
+city VARCHAR(255) NOT NULL,
+is_document_verified VARCHAR(255) NOT NULL,
+requirement_document_path VARCHAR(255) NOT NULL,
+number_of_engineers BIGINT NOT NULL,
+tech_stack_id BIGINT NOT NULL,
+tech_type_id BIGINT NOT NULL,
+maker_program_id BIGINT NOT NULL,
+lead_id BIGINT NOT NULL,
+ideation_engg_id BIGINT NOT NULL,
+buddy_engg_id BIGINT NOT NULL,
+special_remark VARCHAR(255) NOT NULL,
+status VARCHAR(255) NOT NULL,
+creator_stamp DATETIME NOT NULL,
+creator_user VARCHAR(255) NOT NULL,
+PRIMARY KEY(Id, tech_stack_id, tech_type_id, maker_program_id, lead_id, ideation_engg_id, buddy_engg_id));//done
+
+//Insert Query Stored Procedure
+create procedure insert_Company_Requirement(IN fn VARCHAR(255),IN mn VARCHAR(255),IN ln VARCHAR(255),IN email VARCHAR(255),IN hiredCity VARCHAR(255),IN deg VARCHAR(255),IN hiredDate DATETIME,IN mobNo LONG,IN permanent_pincode LONG,IN hired_lab VARCHAR(255),IN attitude VARCHAR(255), IN commn_remark VARCHAR(255),IN know_remark VARCHAR(255),IN agg_perc DOUBLE ,IN status VARCHAR(255),IN creator_stamp DATETIME,IN creator_user VARCHAR(255))
+     begin
+     INSERT INTO 
+	Company_Requirement(company_id, requested_month, city, is_document_verified, requirement_document_path, number_of_engineers, tech_stack_id, tech_type_id, maker_program_id, lead_id, ideation_engg_id, buddy_engg_id, special_remark, status, creator_stamp, creator_user)
+	VALUES(fn,mn,ln,email,hiredCity,deg,hiredDate,mobNo,permanent_pincode,hired_lab,attitude,commn_remark,know_remark,agg_perc,status,creator_stamp,creator_user);
+     end;
+     /
+
+//Update Query Stored Procedure
+create procedure update_Company_Requirement(IN id1 BIGINT,IN firstName VARCHAR(255),IN middleName VARCHAR(255),IN lastName VARCHAR(255),IN email VARCHAR(255),IN hiredCity VARCHAR(255),IN deg VARCHAR(255),IN hiredDate DATETIME,IN mobileNo LONG,IN permanentPincode LONG,IN hiredLab VARCHAR(255),IN atti VARCHAR(255), IN communicationRemark VARCHAR(255),IN knowledgeRemark VARCHAR(255),IN aggregatePercentage DOUBLE ,IN stat VARCHAR(255),IN creatorStamp DATETIME,IN creatorUser VARCHAR(255))
+     begin
+     UPDATE Company_Requirement SET first_name = firstName, middle_name = middleName,last_name = lastName, email_id = email, hired_city = hiredCity, degree = deg, hired_date = hiredDate, mobile_number = mobileNo, permanent_pincode = permanentPincode, hired_lab = hiredLab, attitude = atti, communication_remark = communicationRemark, knowledge_remark = knowledgeRemark, aggregate_percentage = aggregatePercentage, status = stat, creator_stamp = creatorStamp, creator_user = creatorUser WHERE Id=id1;
+     end;
+     /
+
+//Delete On ID procedure query
+create procedure delete_Company_Requirement_On_ID(IN id BIGINT)
+     begin
+     DELETE FROM Company_Requirement WHERE Id=id;
+     end;
+     /
+
+//Select All on ID procedure query
+create procedure select_Company_Requirement_On_ID(IN id BIGINT)
+     begin
+     SELECT * FROM Company_Requirement WHERE Id=id;
+     end;
+     /
+
+//Select all stored procedure query
+create procedure select_Company_Requirement()
+     begin
+     SELECT * FROM Company_Requirement;
+     end;
+     /
+
+//candidate tech stack assignment
+CREATE TABLE Candidate_Tech_Stack_Assignment(Id BIGINT NOT NULL AUTO_INCREMENT,
+requirement_id BIGINT NOT NULL,
+candidate_id BIGINT NOT NULL,
+assign_date DATETIME NOT NULL,
+status VARCHAR(255) NOT NULL,
+creator_stamp DATETIME NOT NULL,
+creator_user VARCHAR(255) NOT NULL,
+PRIMARY KEY(Id, requirement_id, candidate_id));//done
+
+//Insert Query Stored Procedure
+create procedure insert_Candidate_Tech_Stack_Assignment(IN fn VARCHAR(255),IN mn VARCHAR(255),IN ln VARCHAR(255),IN email VARCHAR(255),IN hiredCity VARCHAR(255),IN deg VARCHAR(255),IN hiredDate DATETIME,IN mobNo LONG,IN permanent_pincode LONG,IN hired_lab VARCHAR(255),IN attitude VARCHAR(255), IN commn_remark VARCHAR(255),IN know_remark VARCHAR(255),IN agg_perc DOUBLE ,IN status VARCHAR(255),IN creator_stamp DATETIME,IN creator_user VARCHAR(255))
+     begin
+     INSERT INTO 
+	Candidate_Tech_Stack_Assignment(requirement_id, candidate_id, assign_date, status, creator_stamp, creator_user)
+	VALUES(fn,mn,ln,email,hiredCity,deg,hiredDate,mobNo,permanent_pincode,hired_lab,attitude,commn_remark,know_remark,agg_perc,status,creator_stamp,creator_user);
+     end;
+     /
+
+//Update Query Stored Procedure
+create procedure update_Candidate_Tech_Stack_Assignment(IN id1 BIGINT,IN firstName VARCHAR(255),IN middleName VARCHAR(255),IN lastName VARCHAR(255),IN email VARCHAR(255),IN hiredCity VARCHAR(255),IN deg VARCHAR(255),IN hiredDate DATETIME,IN mobileNo LONG,IN permanentPincode LONG,IN hiredLab VARCHAR(255),IN atti VARCHAR(255), IN communicationRemark VARCHAR(255),IN knowledgeRemark VARCHAR(255),IN aggregatePercentage DOUBLE ,IN stat VARCHAR(255),IN creatorStamp DATETIME,IN creatorUser VARCHAR(255))
+     begin
+     UPDATE Candidate_Tech_Stack_Assignment SET first_name = firstName, middle_name = middleName,last_name = lastName, email_id = email, hired_city = hiredCity, degree = deg, hired_date = hiredDate, mobile_number = mobileNo, permanent_pincode = permanentPincode, hired_lab = hiredLab, attitude = atti, communication_remark = communicationRemark, knowledge_remark = knowledgeRemark, aggregate_percentage = aggregatePercentage, status = stat, creator_stamp = creatorStamp, creator_user = creatorUser WHERE Id=id1;
+     end;
+     /
+
+//Delete On ID procedure query
+create procedure delete_Candidate_Tech_Stack_Assignment_On_ID(IN id BIGINT)
+     begin
+     DELETE FROM Candidate_Tech_Stack_Assignment WHERE Id=id;
+     end;
+     /
+
+//Select All on ID procedure query
+create procedure select_Candidate_Tech_Stack_Assignment_On_ID(IN id BIGINT)
+     begin
+     SELECT * FROM Candidate_Tech_Stack_Assignment WHERE Id=id;
+     end;
+     /
+
+//Select all stored procedure query
+create procedure select_Candidate_Tech_Stack_Assignment()
+     begin
+     SELECT * FROM Candidate_Tech_Stack_Assignment;
+     end;
+     /
+
