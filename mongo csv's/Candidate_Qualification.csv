@@ -1,0 +1,2 @@
+Id, candidate_id, diploma, degree_name, is_degree_name_verified, employee_discipline, is_employee_discipline_verified, passing_year, is_passing_year_verified, final_year_percentage, is_final_year_percentage_verified, training_institute, is_training_institute_verified, training_duration_month, is_training_duration_month_verified, other_training, is_other_training_verified, creator_stamp, creator_user
+7975736535, 7975736535, ec, be, yes, dontknow, yes, 2019, yes, 67.5, yes, x-workz, yes, december, yes, no, yes, 22/04/2020, kelpesh-mali

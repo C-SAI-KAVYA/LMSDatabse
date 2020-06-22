@@ -1,0 +1,2 @@
+id, candidate_id, name, account_number, is_account_num_verified, ifsc_code, is_ifsc_code_verified, pan_number, is_pan_number_verified, addhaar_num, is_addhar_num_verified, creator_stamp, creator_user
+1, 7975736535, cherry, 7975736535, yes, SIBN0013439, yes, gygh7742, yes, 7975736535, yes, 21/04/2020, kalpesh-mali
